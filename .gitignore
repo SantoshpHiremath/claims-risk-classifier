@@ -1,0 +1,8 @@
+venv/
+venv_clean/
+venv_final/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.csv
+.DS_Store
