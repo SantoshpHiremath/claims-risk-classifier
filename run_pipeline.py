@@ -5,7 +5,7 @@ run_pipeline.py
 End-to-end demo: generates a synthetic labeled claims dataset, trains a
 real RandomForestClassifier with a properly held-out train/validation/
 test split, tunes the decision threshold on the validation split only,
-evaluates once on the untouched test split, and prints the full honest
+evaluates once on the untouched test split, and prints the full
 result -- including the comparison against the naive default 0.5
 threshold that turned out to be badly miscalibrated for this imbalanced
 task.
@@ -64,14 +64,13 @@ def main() -> None:
 
     print("\n" + "=" * 70)
     print("Notes:")
-    print("- ROC-AUC (0.62ish) is the honest headline number: real, above-chance")
-    print("  signal, but a genuinely hard, imbalanced task -- not a claim of a")
-    print("  production-ready fraud detector.")
+    print("- ROC-AUC (0.62ish) is the headline number: real, above-chance")
+    print("  signal on a genuinely hard, imbalanced task.")
     print("- The default 0.5 threshold looks better on accuracy alone (it mostly")
     print("  predicts the majority 'not high risk' class) but is actually much")
     print("  worse at the actual job: catching real high-risk claims (recall).")
-    print("  This gap is a real, common trap in imbalanced classification, and")
-    print("  reporting only accuracy here would be misleading.")
+    print("  This is a common trap in imbalanced classification, which is why")
+    print("  precision, recall, F1 and ROC-AUC are reported alongside accuracy.")
     print("- 'high_risk' predictions on new data are scored with the SAME feature")
     print("  encoding and the SAME tuned threshold used during evaluation, not a")
     print("  hardcoded 0.5 -- see predict_risk() in src/model.py.")

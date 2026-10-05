@@ -10,8 +10,8 @@ The label is generated from a genuine (if simple) underlying rule with
 injected noise -- not randomly assigned -- so there is a real, learnable
 signal for a classifier to find, but not a perfect one (mirroring how
 real fraud/risk labels are noisy and imperfect in practice, and giving
-the classifier's honestly-reported accuracy somewhere below 100% to
-report, rather than a suspiciously perfect score).
+the classifier's reported accuracy somewhere below 100%, as with real
+data).
 """
 from __future__ import annotations
 

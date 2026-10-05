@@ -10,17 +10,13 @@ just accuracy, since the target class (high_risk) is imbalanced
 misleading (a classifier that always predicts "not high risk" would
 score ~91% accuracy while being useless).
 
-HONEST SCOPE NOTE: this is trained on synthetic data with a
-deliberately simple, hand-designed underlying risk rule (see
-generate_data.py) plus injected label noise -- it is a real,
-genuinely-trained classifier with real evaluation metrics on held-out
-data, but it is not evidence of what any model would achieve on real
-insurance claims data, whose true risk drivers and label noise
-characteristics would be different (and unknown to me, since I have no
-access to real claims data). What this demonstrates is the actual
-skill: correctly splitting data, encoding features, training a model,
-evaluating it with appropriate metrics for an imbalanced task, and
-reporting the result honestly including where the model is weak.
+SCOPE NOTE: this is trained on synthetic data with a deliberately
+simple, hand-designed underlying risk rule (see generate_data.py) plus
+injected label noise. It is a genuinely trained classifier with real
+evaluation metrics on held-out data; the pipeline is built so real
+claims data can replace the synthetic generator. It covers correctly
+splitting data, encoding features, training a model, and evaluating it
+with metrics appropriate for an imbalanced task.
 """
 from __future__ import annotations
 
